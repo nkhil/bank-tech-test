@@ -1,6 +1,6 @@
 # Bank tech test
 
-This program is made using JavaScript
+This program is made using JavaScript(ES6)
 
 ## How to run it locally
 
