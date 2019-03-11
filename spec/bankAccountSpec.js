@@ -25,5 +25,11 @@ describe("BankAccount", () => {
       bankAccount.withdraw(10, "11-01-2019");
       expect(bankAccount.balance).toEqual(90);
     });
+    it("can throws an error if withdrawal amount > account balance", () => {
+      bankAccount.deposit(100, "10-01-2019");
+      expect(() => {
+        bankAccount.withdraw(101, "10-01-2019");
+      }).toThrow();
+    });
   });
 });
