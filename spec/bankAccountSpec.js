@@ -10,12 +10,12 @@ describe("BankAccount", () => {
   describe(".deposit", () => {
     it("can take a deposit and increment the account balance", () => {
       bankAccount.deposit(100, "10-01-2019");
-      expect(bankAccount.balance).toEqual(100);
+      expect(bankAccount.displayBalance()).toEqual(100);
     });
 
     it("can handle a negative number being deposited", () => {
       bankAccount.deposit(-100, "10-01-2019");
-      expect(bankAccount.balance).toEqual(0);
+      expect(bankAccount.displayBalance()).toEqual(0);
     });
   });
 
@@ -23,7 +23,7 @@ describe("BankAccount", () => {
     it("can withdraw from the account balance", () => {
       bankAccount.deposit(100, "10-01-2019");
       bankAccount.withdraw(10, "11-01-2019");
-      expect(bankAccount.balance).toEqual(90);
+      expect(bankAccount.displayBalance()).toEqual(90);
     });
 
     it("can throws an error if withdrawal amount > account balance", () => {
