@@ -5,6 +5,7 @@ describe("BankAccount", () => {
 
   beforeEach(() => {
     bankAccount = new BankAccount();
+    spyOn(console, "log");
   });
 
   describe(".deposit", () => {
@@ -31,6 +32,17 @@ describe("BankAccount", () => {
       expect(() => {
         bankAccount.withdraw(101, "10-01-2019");
       }).toThrow();
+    });
+  });
+
+  describe(".printStatement", () => {
+    it("does something", () => {
+      bankAccount.deposit(100, "10/01/2019");
+      bankAccount.printStatement();
+      expect(console.log).toHaveBeenCalledWith(
+        "date || credit || debit || balance"
+      );
+      expect(console.log).toHaveBeenCalledWith("10/01/2019 ||  || 100 || 100");
     });
   });
 });
