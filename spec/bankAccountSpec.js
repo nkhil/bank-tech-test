@@ -18,4 +18,12 @@ describe("BankAccount", () => {
       expect(bankAccount.balance).toEqual(0);
     });
   });
+
+  describe(".withdraw", () => {
+    it("can withdraw from the account balance", () => {
+      bankAccount.deposit(100, "10-01-2019");
+      bankAccount.withdraw(10, "11-01-2019");
+      expect(bankAccount.balance).toEqual(90);
+    });
+  });
 });
