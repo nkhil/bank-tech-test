@@ -2,10 +2,17 @@ const BankAccount = require("../lib/bankAccount");
 
 describe("BankAccount", () => {
   let bankAccount;
+  let handleDate;
+
+  class HandleDate {
+    createDateObject() {}
+  }
 
   beforeEach(() => {
-    bankAccount = new BankAccount();
+    handleDate = new HandleDate();
+    bankAccount = new BankAccount(handleDate);
     spyOn(console, "log");
+    spyOn(handleDate, "createDateObject").and.returnValue("10/01/2019");
   });
 
   describe(".deposit", () => {
