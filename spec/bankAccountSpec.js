@@ -3,14 +3,21 @@ const BankAccount = require("../lib/bankAccount");
 describe("BankAccount", () => {
   let bankAccount;
   let handleDate;
+  let printer;
 
   class HandleDate {
     createDateObject() {}
   }
 
+  class Printer {
+    printStatement() {}
+  }
+
   beforeEach(() => {
     handleDate = new HandleDate();
-    bankAccount = new BankAccount(handleDate);
+    // printer = new Printer();
+    printer = jasmine.createSpyObj("printer", ["printStatement"]);
+    bankAccount = new BankAccount(handleDate, printer);
     spyOn(console, "log");
     spyOn(handleDate, "createDateObject").and.returnValue("10/01/2019");
   });
@@ -43,13 +50,10 @@ describe("BankAccount", () => {
   });
 
   describe(".printStatement", () => {
-    it("does something", () => {
+    it("can print a correctly formatted statement", () => {
       bankAccount.deposit(100, "10-01-2019");
       bankAccount.printStatement();
-      expect(console.log).toHaveBeenCalledWith(
-        "date || credit || debit || balance"
-      );
-      expect(console.log).toHaveBeenCalledWith("10/01/2019 ||  || 100 || 100");
+      expect(printer.printStatement).toHaveBeenCalled();
     });
   });
 });
