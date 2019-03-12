@@ -37,7 +37,7 @@ describe("BankAccount", () => {
 
   describe(".printStatement", () => {
     it("does something", () => {
-      bankAccount.deposit(100, "10/01/2019");
+      bankAccount.deposit(100, "10-01-2019");
       bankAccount.printStatement();
       expect(console.log).toHaveBeenCalledWith(
         "date || credit || debit || balance"
