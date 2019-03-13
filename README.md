@@ -4,7 +4,7 @@ This program is made using JavaScript(ES6)
 
 ## How to run the application locally
 
-**Note:** You will need to have node installed.
+**Note:** You will need to have node installed
 
 - Clone or fork it: `git clone https://github.com/nkhil/bank-tech-test.git` and `cd bank-tech-test`
 - In your terminal, `cd` into the project root folder
