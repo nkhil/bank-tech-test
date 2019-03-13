@@ -1,5 +1,7 @@
 # Bank tech test
 
+[![Screen-Shot-2019-03-13-at-22-37-28.png](https://i.postimg.cc/s2JsPpNG/Screen-Shot-2019-03-13-at-22-37-28.png)](https://postimg.cc/jWCptJKR)
+
 This program is made using JavaScript(ES6)
 
 ## How to run the application locally
@@ -8,6 +10,7 @@ This program is made using JavaScript(ES6)
 
 - Clone or fork it: `git clone https://github.com/nkhil/bank-tech-test.git` and `cd bank-tech-test`
 - In your terminal, `cd` into the project root folder
+- `npm install` to install all dependencies
 - `node` to start node
 - Enter the following commands:
   - `.load ./lib/bankAccount.js`
@@ -50,3 +53,7 @@ The format for the output will be:
 This project uses Jasmine.
 
 To run the test suite (unit and feature tests), run `npm test` while in the project root.
+
+## My Approach
+
+Following single responsibility, my application uses a `BankAccount` class that is my 'runner' class that uses a `Printer` class to format and print the statement, as well as a `HandleDate` class to manage the formatting of the date.
