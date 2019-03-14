@@ -34,7 +34,7 @@ To make a withdrawal:
 
 To see the current balance:
 
-- `bankAccount.currentBalance()`
+- `bankAccount.displayBalance()`
 
 To print a bank statement, use:
 
